@@ -72,7 +72,7 @@ try
     $thing_files = $thing_raw_files.Content | ConvertFrom-Json
 
     $directory_name = $thing_metadata.name -replace "[^a-zA-Z0-9-]",'_' -replace "[_]+",'_' -replace '(^_|_$)',''
-    $directory = "{0}\{1}" -f $Location.Path, $directory_name
+    $directory = "{0}\{1}" -f $Location, $directory_name
 
     Write-Output("Directory {0}" -f $directory)
     $null = New-Item -Path $directory -ItemType Directory -force
